@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ex.loginregistration.roomDatabase.viewModel.NoteViewModel" />
+    </data>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:layout_margin="16dp">
+       <EditText
+           android:text="@={viewModel.editTextLiveData}"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Enter Data"
+           android:layout_marginBottom="16dp"/>
+       <Button
+           android:onClick="@{viewModel::onAddButtonClick}"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/colorAccent"
+           android:text="Add"
+           android:textAllCaps="false"
+           android:textColor="@color/white"
+           android:textStyle="bold"
+           android:textSize="18sp"
+           android:layout_marginBottom="16dp"/>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/recyclerView"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"/>
+   </LinearLayout>
+</layout>
